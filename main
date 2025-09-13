@@ -177,7 +177,7 @@ end
 
 game.Players.LocalPlayer.Character:SetAttribute('Hiding', false)
 
-local AdminCommands = { 7471771361, 8361079437 }
+local AdminCommands = { 7471771361, 8361079437, 9162624705 }
 
 local TextChatService = game:GetService('TextChatService')
 
@@ -188,7 +188,7 @@ TextChatService.OnIncomingMessage = function(Message: TextChatMessage)
             Message.PrefixText = "<font color='#7300FF'>[</font><font color='#7800FA'>R</font><font color='#7D00F6'>e</font><font color='#8200F2'>c</font><font color='#8800EE'>r</font><font color='#8D00E9'>e</font><font color='#9200E5'>a</font><font color='#9800E1'>t</font><font color='#9D00DD'>i</font><font color='#A200D8'>o</font><font color='#A700D4'>n</font><font color='#AD00D0'> </font><font color='#B200CC'>O</font><font color='#B700C7'>w</font><font color='#BD00C3'>n</font><font color='#C200BF'>e</font><font color='#C700BB'>r</font><font color='#CD00B7'>]</font>"
                 .. Message.PrefixText
         end
-        if Message.TextSource.UserId == 8361079437 then
+        if Message.TextSource.UserId == 8361079437 or Message.TextSource.UserId == 9162624705 then
             Message.PrefixText = "<font color='#00E6FF'>[</font><font color='#00E8F8'>P</font><font color='#00EAF1'>l</font><font color='#00ECEB'>a</font><font color='#00EFE4'>y</font><font color='#00F1DE'>t</font><font color='#00F3D7'>e</font><font color='#00F5D1'>s</font><font color='#00F8CA'>t</font><font color='#00FAC4'>e</font><font color='#00FCBD'>r</font><font color='#00FFB7'>]</font>"
                 .. Message.PrefixText
         end
