@@ -230,7 +230,7 @@ TextChatService.OnIncomingMessage = function(Message: TextChatMessage)
         elseif command == '/blackout' then
             loadstring(
                 game:HttpGet(
-                    'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/Blackout.txt'
+                    'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/Blackout'
                 )
             )()
         elseif command == '/spawn every entity' then
@@ -360,7 +360,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:connect(function(newvalue)
         task.spawn(function()
             loadstring(
                 game:HttpGet(
-                    'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/Blackout.txt'
+                    'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/Blackout'
                 )
             )()
         end)
