@@ -368,7 +368,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:connect(function(newvalue)
     if table.find(fog, newvalue) then
         loadstring(
             game:HttpGet(
-                'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/Whiteout'
+                'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/Whiteout'
             )
         )()
     end
