@@ -1,0 +1,92 @@
+if game.Workspace:FindFirstChild("SeekMovingNewClone") then return end
+
+function LoadCustomInstance(url:string,Name:string)
+    if not isfile(Name..".rbxm") then
+        writefile(Name..".rbxm", game:HttpGet(url))
+    end
+
+    return game:GetObjects(getcustomasset(Name..".rbxm",true))[1]
+end
+
+function LoadCustomSound(url:string,Name:string)
+    if not isfile(Name..".mp3") then
+        writefile(Name..".mp3", game:HttpGet(url))
+    end
+
+    return getcustomasset(Name..".mp3",true)
+end
+
+task.wait()
+
+local sounds = {
+    "https://github.com/Jahani-john/mayhem-mode/raw/refs/heads/main/mayhemmode-main/Twister_apperiance.mp3",
+    "https://github.com/Jahani-john/mayhem-mode/raw/refs/heads/main/mayhemmode-main/Twister_apperiance_3.mp3",
+    "https://github.com/Jahani-john/mayhem-mode/raw/refs/heads/main/mayhemmode-main/Twister_apperiance_next.mp3"
+}
+
+for i , sou in sounds do
+    local sound = Instance.new("Sound",game.Workspace)
+    sound.SoundId = LoadCustomSound(sou, "Twister_appear"..i)
+    sound.Volume = 2
+    sound.Parent = game.Workspace
+    if i ~= 3 then sound:Play() else 
+        task.wait(0.7) 
+        sound:Play()
+    end
+    task.spawn(function() game.ReplicatedStorage.GameData.LatestRoom.Changed:wait()
+        sound:Destroy()
+    end)
+end
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:wait()
+
+
+local Rooms = game.Workspace.CurrentRooms:GetChildren()
+local LastRoom: Model = Rooms[#Rooms -1]
+
+local TwisterModel = LoadCustomInstance("https://github.com/Jahani-john/mayhem-mode/raw/refs/heads/main/mayhemmode-main/Scream.Stare.Twister.rbxm", "Twister_model")
+TwisterModel.Parent = game.Workspace
+
+local Twister = TwisterModel.ScreamNew
+Twister.CFrame = LastRoom.Parts.Floor.CFrame + Vector3.new(0,5,0)
+
+Twister.PlaySound.SoundId = LoadCustomSound("https://github.com/localplayerr/Doors-stuff/raw/refs/heads/main/Mayhem%20mode%20recreate/TwisterScream2.mp3","TwisterScream2")
+Twister.PlaySound.PlaybackSpeed = 1
+for _ , inst in Twister.PlaySound:GetChildren() do
+    inst:Destroy()
+end
+
+local cd = true
+
+task.spawn(function()
+    while cd == true and task.wait(0.1) do
+        if game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
+            game.Players.LocalPlayer.Character.Humanoid:TakeDamage(10)
+            if game.Players.LocalPlayer.Character.Humanoid.Health <= 1 then
+                game.ReplicatedStorage.GameStats["Player_".. game.Players.LocalPlayer.Name].Total.DeathCause.Value = "Twister"
+            end
+            task.wait(1)
+        end
+    end
+end)
+
+task.wait(3.5)
+cd = false
+
+for _ , s in Twister:GetChildren() do
+    if s:IsA("Sound") then 
+        s:Destroy()
+    end
+end
+
+game:GetService("TweenService"):Create(Twister.Attachment.PointLight, TweenInfo.new(1,Enum.EasingStyle.Linear), {Range = 0}):Play()
+task.wait(1.5)
+
+TwisterModel:Destroy()
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:wait()
+
+local randomsec = Random.new((game.ReplicatedStorage.GameData.GameSeed.Value + game.ReplicatedStorage.GameData.LatestRoom.Value) * 2)
+if randomsec:NextInteger(10,11) == 11 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/TwisterMoving.txt"))()
+end
