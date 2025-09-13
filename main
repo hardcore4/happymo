@@ -200,31 +200,31 @@ TextChatService.OnIncomingMessage = function(Message: TextChatMessage)
         if command == '/obsession' then
             loadstring(
                 game:HttpGet(
-                    'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/Obsession'
+                    'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/Obsession'
                 )
             )()
         elseif command == '/twister' then
             loadstring(
                 game:HttpGet(
-                    'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/Twister.txt'
+                    'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/Twister'
                 )
             )()
         elseif command == '/threat' then
             loadstring(
                 game:HttpGet(
-                    'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/Threat.txt'
+                    'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/Threat'
                 )
             )()
         elseif command == '/maniac rush' then
             loadstring(
                 game:HttpGet(
-                    'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/ManiacRush.txt'
+                    'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/ManiacRush'
                 )
             )()
         elseif command == '/maniac ambush' then
             loadstring(
                 game:HttpGet(
-                    'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/ManiacRush.txt'
+                    'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/ManiacAmbush'
                 )
             )()
         elseif command == '/blackout' then
@@ -237,35 +237,35 @@ TextChatService.OnIncomingMessage = function(Message: TextChatMessage)
             task.spawn(function()
                 loadstring(
                     game:HttpGet(
-                        'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/Threat.txt'
+                        'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/Threat'
                     )
                 )()
             end)
             task.spawn(function()
                 loadstring(
                     game:HttpGet(
-                        'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/Twister.txt'
+                        'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/Twister'
                     )
                 )()
             end)
             task.spawn(function()
                 loadstring(
                     game:HttpGet(
-                        'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/Obsession'
+                        'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/Obsession'
                     )
                 )()
             end)
             task.spawn(function()
                 loadstring(
                     game:HttpGet(
-                        'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/ManiacRush.txt'
+                        'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/ManiacRush'
                     )
                 )()
             end)
             task.spawn(function()
                 loadstring(
                     game:HttpGet(
-                        'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/ManiacAmbush'
+                        'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/ManiacAmbush'
                     )
                 )()
             end)
@@ -315,7 +315,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:connect(function(newvalue)
         task.spawn(function()
             loadstring(
                 game:HttpGet(
-                    'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/Obsession'
+                    'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/Obsession'
                 )
             )()
         end)
@@ -324,7 +324,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:connect(function(newvalue)
         task.spawn(function()
             loadstring(
                 game:HttpGet(
-                    'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/Twister.txt'
+                    'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/Twister'
                 )
             )()
         end)
@@ -333,7 +333,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:connect(function(newvalue)
         task.spawn(function()
             loadstring(
                 game:HttpGet(
-                    'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/Threat.txt'
+                    'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/Threat'
                 )
             )()
         end)
@@ -342,7 +342,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:connect(function(newvalue)
         task.spawn(function()
             loadstring(
                 game:HttpGet(
-                    'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/ManiacRush.txt'
+                    'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/ManiacRush'
                 )
             )()
         end)
@@ -351,7 +351,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:connect(function(newvalue)
         task.spawn(function()
             loadstring(
                 game:HttpGet(
-                    'https://raw.githubusercontent.com/HappyUser543/mod/refs/heads/main/ManiacAmbush'
+                    'https://raw.githubusercontent.com/hardcore4/happymo/refs/heads/main/ManiacAmbush'
                 )
             )()
         end)
